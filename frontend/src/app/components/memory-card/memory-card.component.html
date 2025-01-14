@@ -1,0 +1,57 @@
+<p-card 
+    [style]="{ 
+        width: '360px', 
+        borderRadius: '12px', 
+        border: '1px solid #e5e7eb', 
+        backgroundColor: '#ffffff', 
+        boxShadow: '0 8px 16px rgba(0, 0, 0, 0.1)', 
+        margin: '16px 0' 
+    }" 
+    styleClass="p-4 mx-auto memory-card">
+    
+    <!-- Header (Polaroid Image) -->
+    <ng-template pTemplate="header">
+        <div class="relative">
+            <img 
+                class="w-full object-cover rounded-t-xl card-image"
+                src="https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ=" 
+            />
+        </div>
+    </ng-template>
+
+    <!-- Polaroid Description Section -->
+    <div 
+        class="p-4 text-center" 
+        style="padding: 16px 24px; background: #ffffff; border-top: 8px solid #f9fafb;"
+    >
+        <h3 
+            class="text-lg font-semibold mb-2" 
+            style="color: #374151; font-family: 'Courier New', Courier, monospace;"
+        >
+            {{memoryCard.title}}
+        </h3>
+        <p class="text-gray-600 text-sm" style="line-height: 1.5;">
+            {{memoryCard.description}}
+        </p>
+    </div>
+
+    <!-- Footer (Polaroid Note Section) -->
+    <ng-template pTemplate="footer">
+        <div 
+            class="flex justify-between items-center text-sm" 
+            style="padding: 12px 24px; background: #f3f4f6; border-top: 1px solid #e5e7eb;"
+        >
+            <span class="flex items-center text-gray-500">
+                <i class="pi pi-calendar mr-2 text-primary"></i>
+                {{memoryCard.timestamp | date:'medium'}}
+            </span>
+            <p-button 
+                icon="pi pi-heart" 
+                styleClass="p-button-rounded p-button-text" 
+                [style]="{ 
+                    color: 'var(--primary-color)' 
+                }">
+            </p-button>
+        </div>
+    </ng-template>
+</p-card>

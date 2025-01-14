@@ -1,0 +1,14 @@
+/* Ensure the image stays inside the card */
+.card-image {
+    width: 100%;
+    height: auto; 
+    object-fit: cover;
+    display: block; 
+    max-height: 400px; 
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.memory-card {
+    display: flex;
+    flex-direction: column;
+}
