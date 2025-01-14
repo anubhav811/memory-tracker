@@ -1,19 +1,6 @@
-<div *ngFor="let card of cards; let i = index" 
-     class="memory-card-container" 
-     [ngClass]="{ 
-       'left-layout': i % 2 === 0, 
-       'right-layout': i % 2 !== 0 
-     }">
-  
-  <!-- Card on the left and Timestamp on the right (for even index) -->
-  <div *ngIf="i % 2 === 0" class="card-timestamp-wrapper">
-    <app-memory-card [memoryCard]="card"></app-memory-card>
-    <span class="timestamp">{{ card.timestamp | date: 'medium' }}</span>
-  </div>
-  
-  <!-- Timestamp on the left and Card on the right (for odd index) -->
-  <div *ngIf="i % 2 !== 0" class="card-timestamp-wrapper">
-    <span class="timestamp">{{ card.timestamp | date: 'medium' }}</span>
-    <app-memory-card [memoryCard]="card"></app-memory-card>
-  </div>
-</div>
+<nav>
+  <a routerLink="/">Home</a> 
+  <a routerLink="/login">Login</a>
+  <a routerLink="/register">Register</a>
+</nav>
+<router-outlet></router-outlet>
